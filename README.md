@@ -20,11 +20,7 @@ Funcionalidades:
 
 Para a utilização, deverá ser alterado o arquivo "ApplicationDbContext.cs"
 
-` protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server =<seu_servidor_aqui>; Database = MBFinance; Trusted_Connection = True; TrustServerCertificate = true");
-        }`
+`Server=<seu_servidor_aqui>;Database=MBFinance;User Id=<seu_usuario_aqui>;Password=<sua_senha_aqui>;`
 
 ## Exemplo de uso
 
