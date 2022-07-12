@@ -5,12 +5,8 @@ O sistma tem como objetivo cadastrar e calcular os lançamentos do usuário.
 Funcionalidades:
 
 - Cadastro de Categorias
-- Edição de Categorias
-- Deleção de Categorias
 
 - Cadastro de Lançamentos
-- Edição de Lançamentos
-- Deleção de Lançamentos
 
 - Calculo total das despesas
 
