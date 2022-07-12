@@ -29,6 +29,10 @@ Para a utilização do sistema, deve ser cadastrada uma categoria e em seguida, 
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+<div>
+  <a href="https://github.com/mooizabaatista">
+  <img height="150em" src="https://github-readme-stats.vercel.app/api?username=mooizabaatista&show_icons=true&theme=solarized-dark&include_all_commits=true&count_private=true"/>
+  <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mooizabaatista&layout=compact&langs_count=7&theme=solarized-dark"/>
+</div>
 
-[https://github.com/mooizabaatista/github-link](https://github.com/dbader/)
+[https://github.com/mooizabaatista/github-link](https://github.com/mooizabaatista/)
