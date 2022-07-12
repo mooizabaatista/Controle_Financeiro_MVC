@@ -18,14 +18,18 @@ Funcionalidades:
 
 ## Instalação
 
-Para a utilização, deverá ser alterado o arquivo "ApplicationDbContext.cs"
+1 - Para a utilização, deverá ser alterado o arquivo "ApplicationDbContext.cs"
 
 `Server=<seu_servidor_aqui>;Database=MBFinance;User Id=<seu_usuario_aqui>;Password=<sua_senha_aqui>;`
 
+2 - Marcar o projeto MBFinance.Infra como startup project e navegar até o painel Package Manager Console e inserir o seguinte comando: 
+
+> Update-Datebase
+
+3 - Marcar o projeto MBFinance.WebUI como startup project e iniciar o projeto.
 ## Exemplo de uso
 
 Para a utilização do sistema, deve ser cadastrada uma categoria e em seguida, um lançamento relacionado a mesma. 
-
 
 ## Meta
 
