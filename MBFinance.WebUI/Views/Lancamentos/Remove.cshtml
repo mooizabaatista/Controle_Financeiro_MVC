@@ -1,0 +1,54 @@
+﻿@model MBFinance.Domain.Entities.Lancamento
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3 class="font-weight-lighter">Exclusão de Lançamento</h3>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <!-- Informações sobre o lançamento que será removido  -->
+            <h3 class="font-weight-ligher">Você tem certeza que deseja remover</h3>
+            <div class="row">
+                <table class="table table-sm table-hover text-center mt-3">
+                    <thead class="bg-dark text-light">
+                        <tr>
+                            <th scope="col">Id <i class="fa fa-user-circle-o" aria-hidden="true"></i></th>
+                            <th scope="col">Local <i class="fa fa-shopping-basket ml-1" aria-hidden="true"></i></th>
+                            <th scope="col">Data <i class="fa fa-calendar-o ml-1" aria-hidden="true"></i></th>
+                            <th scope="col">Categoria <i class="fa fa-server" aria-hidden="true"></i>
+                            <th scope="col">Valor <i class="fa fa-money ml-1" aria-hidden="true"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">@Model.Id</th>
+                            <th scope="row">@Model.Local</th>
+                            <td>@Model.Data.ToShortDateString()</td>
+                            <td>@Model.Categoria.Nome</td>
+                            <td>@Model.Valor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Formulário de remoção -->
+    <div class="row">
+        <div class="col-3 mt-3">
+            <form asp-action="RemovePost" asp-controller="Lancamentos" method="post">
+                <!-- Id hidden -->
+                <input type="hidden" asp-for="@Model.Id" />
+                 <!-- Remover -->
+                <button type="submit" value="Remover" class="btn btn-sm btn-danger">
+                    Remover <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <!-- Cancelar -->
+                <a asp-action="Index" asp-controller="Home" class="btn btn-sm btn-dark">Cancelar <i class="fa fa-arrow-left ml-1" aria-hidden="true"></i></a>
+            </form>
+        </div>
+    </div>
+</div>

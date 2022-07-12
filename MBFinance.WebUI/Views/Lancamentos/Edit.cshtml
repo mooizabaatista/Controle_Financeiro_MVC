@@ -1,0 +1,72 @@
+﻿@model MBFinance.Domain.Entities.Lancamento
+
+<div class="container">
+    <div class="row">
+        <!-- Coluna auxiliar -->
+        <div class="col-3"></div>
+        <!-- Header -->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Editar Lançamento</h5>
+                </div>
+                <!-- Formulario de edição -->
+                <div class="card-body">
+                    <form asp-action="Edit" asp-controller="Lancamentos" method="post" class="mt-2">
+                        <div class="row">
+                            <!-- Local -->
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Local</label>
+                                    <input asp-for="Local" class="form-control" />
+                                </div>
+                            </div>
+                            <!-- Descrição -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <input asp-for="Descricao" class="form-control" />
+                                </div>
+                            </div>
+                            <!-- Data -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input asp-for="Data" class="form-control" type="date" />
+                                </div>
+                            </div>
+                            <!-- Valor -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Valor</label>
+                                    <input asp-for="Valor" class="form-control" value="@Convert.ToDecimal(Model.Valor)" />
+                                </div>
+                            </div>
+                            <!-- Categoria -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Categoria</label>
+                                    <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.Categorias"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ações -->
+                        <div class="form-group">
+                            <div class="row">
+                                <!-- Editar -->
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-sm btn-success form-control">Editar<i class="fa fa-pencil ml-2" aria-hidden="true"></i></button>
+                                </div>
+                                <!-- Cancelar -->
+                                <div class="col-6">
+                                  <a asp-action="Index" asp-controller="Home" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

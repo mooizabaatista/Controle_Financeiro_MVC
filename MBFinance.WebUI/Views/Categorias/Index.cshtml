@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MBFinance.Domain.Entities.Categoria>
+
+<div class="container">
+    <!-- Header -->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3 class="font-weight-lighter">Gestão de Categorias</h3>
+            <hr />
+        </div>
+    </div>
+    <!-- Link para criar nova categoria -->
+    <div class="col-2">
+        <a class="btn btn-sm btn-dark d-flex justify-content-center align-items-md-center mb-3 p-2"
+           asp-action="Create"
+           asp-controller="Categorias">
+            Cadastrar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+        </a>
+    </div>
+    <!-- Tabela com as categorias -->
+    <div class="row">
+        <table class="table table-sm table-hover text-center">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <th scope="col">Id <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></th>
+                    <th scope="col">Nome <i class="fa fa-user-circle-o" aria-hidden="true"></i></th>
+                    <th scope="col">Ações <i class="fa fa-cog ml-1" aria-hidden="true"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <td>@item.Nome</td>
+                        <td>
+                            <span>
+                                 <a asp-action="Edit" asp-controller="Categorias" asp-route-id="@item.Id" class="btn btn-sm btn-dark">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a asp-action="Remove" asp-controller="Categorias" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                   <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+﻿@model MBFinance.Domain.Entities.Lancamento
+
+<div class="container">
+    <div class="row">
+        <!-- Coluna auxiliar -->
+        <div class="col-3"></div>
+        <!-- Heder -->
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Adicionar Lançamento</h5>
+                </div>
+                <!-- Formulário de cadastro -->
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Lancamentos" method="post" class="mt-2">
+                        <div class="row">
+                             <!-- Local -->
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label>Local</label>
+                                    <input asp-for="Local" name="local" id="local" class="form-control" />
+                                </div>
+                            </div>
+                             <!-- Descrição -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    <input asp-for="Descricao" name="descricao" id="descricao" class="form-control" />
+                                </div>
+                            </div>
+                             <!-- Data -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input asp-for="Data" name="data" id="data" class="form-control" type="date" />
+                                </div>
+                            </div>
+                            <!-- Valor -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Valor</label>
+                                    <input asp-for="Valor" name="valor" id="valor" class="form-control" type="number" min="1" step="any" />
+                                </div>
+                            </div>
+                            <!-- Categoria -->
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Categoria</label>
+                                    <select asp-for="CategoriaId" name="categoriaId" id="categoriaId" class="form-control" asp-items="ViewBag.Categorias"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ações -->
+                        <div class="form-group">
+                            <div class="row">
+                                <!-- Cadastrar -->
+                                <div class="col-6">
+                                    <button class="btn btn-sm btn-success form-control" type="submit">
+                                        Cadastrar <i class="fa fa-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <!-- Cancelar -->
+                                <div class="col-6">
+                                    <a asp-action="Index" asp-controller="Home" class="btn btn-sm btn-dark form-control">Cancelar <i class="fa fa-arrow-left ml-2" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+﻿@model X.PagedList.IPagedList<MBFinance.Domain.Entities.Lancamento>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common
+
+
+<style>
+    .header {
+        /*background-image: url("https://www.pngmart.com/files/13/Blue-Abstract-PNG-Background-Image.png");*/
+        background-image: url("https://www.pikpng.com/pngl/b/69-697044_blue-opaque-background-perfect-ed-sheeran-background-clipart.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+</style>
+
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="row">
+            <div class="col-12 text-center mt-5">
+                @*@<img src="https://cdn-icons-png.flaticon.com/512/781/781760.png" alt="" width="100" />*@
+                <img src="~/img/logo.png" alt="" width="150" />
+                @*<img src="https://cdn-icons-png.flaticon.com/512/1077/1077874.png" alt="" width="120" />*@
+            </div>
+            <!-- Cadastrar novo Lançamento -->
+            <div class="col-2 ml-3">
+                <a class="btn btn-sm btn-dark d-flex justify-content-center align-items-md-center mb-3 p-2"
+                   asp-action="Create"
+                   asp-controller="Lancamentos">
+                    Novo Lançamento <i class="far fa-plus-circle ml-2 mt-1" aria-hidden="true"></i> 
+                </a>
+            </div>
+        </div>
+    </header>
+        <hr />
+    <!-- Valor Total Gasto -->
+    <div class="row">
+        <div class="col-12 text-right">
+            <h1><span class="badge badge-danger">@ViewBag.ValorTotal.ToString("C2")</span></h1>
+        </div>
+    </div>
+
+    <!-- Tabela com os lançamentos -->
+    <div class="row">
+        <table class="table table-sm table-hover text-center mt-3">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <th scope="col">Id <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i></th>
+                    <th scope="col">Local <i class="far fa-cash-register ml-1"></i></th>
+                    <th scope="col">Data <i class="fal fa-calendar-alt ml-1"></i></th>
+                    <th scope="col">Categoria <i class="far fa-info-circle ml-1"></i></th>
+                    <th scope="col">Valor <i class="fal fa-money-check-alt ml-1"></i></th>
+                    <th scope="col">Ações <i class="fal fa-cogs ml-1"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <th scope="row">@item.Local</th>
+                        <td>@item.Data.ToShortDateString()</td>
+                        <td>@item.Categoria.Nome</td>
+                        <td>@item.Valor</td>
+                        <td>
+                            <span>
+                                <a asp-action="Edit" asp-controller="Lancamentos" asp-route-id="@item.Id" class="btn btn-sm btn-dark">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                                <a asp-action="Remove" asp-controller="Lancamentos" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <!-- Paginação -->
+        <div class="row">
+            <div class="col">
+                @Html.PagedListPager(Model, pagina => Url.Action("Index",
+                new { pagina }),
+                new PagedListRenderOptions {
+                LiElementClasses = new string[] { "page-item" },
+                PageClasses = new string[] { "page-link" }
+                })
+            </div>
+        </div>
+    </div>
+</div>
