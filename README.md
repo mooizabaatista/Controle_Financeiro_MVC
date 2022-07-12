@@ -1,6 +1,6 @@
-# CONTROLE DE FINANÇAS - ASP.NET CORE MVC
+### Controle de Finanças - ASP.NET Core MVC
 
-O sistma tem como objetivo cadastrar e calcular os lançamentos do usuário.
+O sistema tem como objetivo cadastrar e calcular os lançamentos do usuário.
 
 Funcionalidades:
 
@@ -16,7 +16,7 @@ Funcionalidades:
 
 1 - Para a utilização, deverá ser alterado o arquivo "ApplicationDbContext.cs"
 
-`Server=<seu_servidor_aqui>;Database=MBFinance;User Id=<seu_usuario_aqui>;Password=<sua_senha_aqui>;`
+> Server=<seu_servidor_aqui>;Database=MBFinance;User Id=<seu_usuario_aqui>;Password=<sua_senha_aqui>;
 
 2 - Marcar o projeto MBFinance.Infra como startup project e navegar até o painel Package Manager Console e inserir o seguinte comando: 
 
