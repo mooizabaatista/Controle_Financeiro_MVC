@@ -1,4 +1,4 @@
-### Controle de Finanças - ASP.NET Core MVC
+## Controle de Finanças - ASP.NET Core MVC
 
 O sistema tem como objetivo cadastrar e calcular os lançamentos do usuário.
 
